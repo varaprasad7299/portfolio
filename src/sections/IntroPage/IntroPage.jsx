@@ -1,10 +1,22 @@
 import styles from "./IntroPage.module.css";
 import ProfileImg from "../../assets/profilepic.png";
-import colorModeImg from "../../assets/sun.svg";
-import igImg from "../../assets/ig.svg";
-import GithubIcon from "../../assets/githubIcon.svg";
-import LinkedInIcon from "../../assets/LinkedInIcon.svg";
+import sun from "../../assets/sun.svg";
+import moon from "../../assets/moon.svg";
+import InstaLight from "../../assets/InstaLight.svg";
+import InstaDark from "../../assets/InstaDark.svg";
+import GithubIconLight from "../../assets/githubIconLight.svg";
+import GithubIconDark from "../../assets/githubIconDark.svg";
+import LinkedInIconLgiht from "../../assets/LinkedInIconLight.svg";
+import LinkedInIconDark from "../../assets/LinkedInIconDark.svg";
+import Resume from "../../assets/MyResume.pdf";
+import { useTheme } from "../../Common/ThemeContext";
+
 const IntroPage = () => {
+  const { theme, toggleTheme } = useTheme();
+  const ColorModeIcon = theme === "light" ? sun : moon;
+  const InstaIcon = theme === "light" ? InstaLight : InstaDark;
+  const GithubIcon = theme === "light" ? GithubIconLight : GithubIconDark;
+  const LinkedInIcon = theme === "light" ? LinkedInIconLgiht : LinkedInIconDark;
   return (
     <section className={styles.container}>
       <div className={styles.colorModeContainer}>
@@ -13,7 +25,7 @@ const IntroPage = () => {
           alt="Profile Pic of Vara Prasad"
           className={styles.ProfilePic}
         />
-        <img src={colorModeImg} alt="color mode icon" />
+        <img src={ColorModeIcon} alt="color mode icon" onClick={toggleTheme} />
       </div>
       <div className={styles.intro}>
         <h1>
@@ -22,7 +34,7 @@ const IntroPage = () => {
         <h2>Computer Science Student</h2>
         <span>
           <a href="https://www.instagram.com/meliodas.7299/" target="_blank">
-            <img src={igImg} alt="Instagram Account" />
+            <img src={InstaIcon} alt="Instagram Account" />
           </a>
           <a href="https://github.com/varaprasad7299" target="_blank">
             <img src={GithubIcon} alt="GitHub Account" />
@@ -34,6 +46,13 @@ const IntroPage = () => {
             <img src={LinkedInIcon} alt="LinkedIn Account" />
           </a>
         </span>
+        <p>
+          With passion for creating and developing software application for
+          Idividual or Organisations
+        </p>
+        <a href={Resume} download>
+          <button className="hover">Resume</button>
+        </a>
       </div>
     </section>
   );
