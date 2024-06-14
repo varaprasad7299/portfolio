@@ -25,9 +25,14 @@ const IntroPage = () => {
           alt="Profile Pic of Vara Prasad"
           className={styles.ProfilePic}
         />
-        <img src={ColorModeIcon} alt="color mode icon" onClick={toggleTheme} />
+        <img
+          className={styles.colorMode}
+          src={ColorModeIcon}
+          alt="color mode icon"
+          onClick={toggleTheme}
+        />
       </div>
-      <div className={styles.intro}>
+      <div className={styles.info}>
         <h1>
           Vara Prasad <br /> Velpula
         </h1>
@@ -46,7 +51,7 @@ const IntroPage = () => {
             <img src={LinkedInIcon} alt="LinkedIn Account" />
           </a>
         </span>
-        <p>
+        <p className={styles.description}>
           With passion for creating and developing software application for
           Idividual or Organisations
         </p>
