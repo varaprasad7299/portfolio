@@ -52,10 +52,10 @@ const IntroPage = () => {
           </a>
         </span>
         <p className={styles.description}>
-          With passion for creating and developing software application for
+          With passion for creating and developing software applications for
           Idividual or Organisations
         </p>
-        <a href={Resume} download>
+        <a href={Resume} target="_blanck">
           <button className="hover">Resume</button>
         </a>
       </div>
